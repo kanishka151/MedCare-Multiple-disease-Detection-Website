@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<p lang="en">
+<head>
+    <title>MedCare | Assessment</title>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script type="text/javascript" language="JavaScript">
+    window.onload = function () {
+    document.getElementById("download")
+        .addEventListener("click", () => {
+            const invoice = this.document.getElementById("assess");
+            console.log(invoice);
+            console.log(window);
+            var opt = {
+                margin: 0,
+                filename: 'Liver_Assessment.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+            };
+            html2pdf().from(invoice).set(opt).save();
+        })
+   }</script>
+    <style>
+        body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: #E3FEF7;
+}
+
+nav {
+    font-family: sans-serif;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.container {
+    max-width: 960px;
+}
+
+.pricing-header {
+    max-width: 700px;
+}
+
+.card-deck .card {
+    min-width: 220px;
+}
+
+.themed-container {
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: #77B0AA;
+    border: 1px solid #003C43;
+}
+    </style>
+</head>
+    <body>
+    <div id="assess">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-5">Risk Assessment</h1>
+        <p class="lead">Please find below the prediction results</p>
+    </div>
+    <div class="container themed-container"><h1 style="text-align: center;">{{prediction_text}}</h1></div>
+    <!-- Recommendations content start-->
+    <div style="width: 60%; text-align: center; margin-left: 310px;">
+        <h3 style="color: #1a0877; font-size: 24px; font-weight: bold; margin-bottom: 15px; cursor: pointer;"
+            onmouseover="showList()">"Parkinson's Management: 3 Essential Tips</h3>
+    
+        <ul id="list" style="display: none; list-style-type: disc; padding-left: 20px; text-align: center;">
+            <li style="color: #120113; font-size: 19px; margin-bottom: 10px;">Medication Adherence: Stick to your prescribed medication schedule diligently. Consistency is crucial for managing symptoms effectively and maintaining quality of life.</li>
+            <li style="color: #120113; font-size: 19px; margin-bottom: 10px;">Regular Exercise: Engage in regular physical activity tailored to your abilities and interests. Exercise can help improve mobility, balance, and overall well-being. Consider activities like walking, swimming, or tai chi.</li>
+            <li style="color: #120113; font-size: 19px; margin-bottom: 10px;">Speech and Swallowing Exercises: Practice speech and swallowing exercises recommended by a speech therapist or healthcare provider. These exercises can help maintain communication abilities and prevent complications related to swallowing difficulties.</li>
+        </ul>
+    </div>
+    
+    <script>
+        function showList() {
+            document.getElementById("list").style.display = "block";
+        }
+    </script>
+    
+    <!-- Recommendations content end-->
+    <p style="text-align: center;">Click <a href="/disindex">here</a> to learn more about Liver Disease</p>
+    <p style="text-align: center;">&copy;medcare.com</p>
+    </div>
+    <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-lg" id="download">Download</button>
+</body>
+</p>
